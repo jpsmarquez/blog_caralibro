@@ -1,0 +1,15 @@
+  <h1>caralibro </h1>
+  <h2>DELETE POSTS</h2>
+  <% @all_posts.each do |post| %>
+  	   <h3><ul><li><%= post.title%></li></ul></h3>
+       <ul><li><%= post.body%></li></ul>
+        <h5><ul><li><% post.tags.each do |tag|%>
+        <h3><ul><li><a href="/link_tag/<%= tag.tag %>" method="get" name="tag" >#<%=tag.tag%></a></li></ul></h3>
+         <% end %>  
+        </li></ul></h5>       
+       	<h6><ul><li><%= post.date%></li></ul></h6>
+         <p><ul><li><a href="/post_to_delete/<%= post.id %>"> DELETE </a></li></ul><p>
+  <% end %>
+
+  <p><a href="/"> HOME </a><p>
+  <p><a href="/posts_settings"> BACK </a><p>

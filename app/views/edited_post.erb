@@ -1,0 +1,10 @@
+<h1>caralibro </h1>
+<h3><ul><li><%= @post.title%></li></ul></h3>
+    <ul><li><%= @post.body%></li></ul>
+        <h5><ul><li><% @post.tags.each do |tag|%>
+        <h3><ul><li><a href="/link_tag/<%= tag.tag %>" name="tag" >#<%=tag.tag%></a></li></ul></h3>
+         <% end %> 
+
+<p><a href="/"> HOME </a><p>
+
+<p><a href="/posts_settings"> BACK </a><p>

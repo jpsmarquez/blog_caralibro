@@ -1,0 +1,22 @@
+<h1>caralibro </h1>
+<h2>EDIT <%=@post2edit.title.upcase%></h2>
+
+
+  <form action="/edit_post/<%=@post2edit.id%>" method="post"> 
+    <h4> edit title </h4>
+    <textarea type="text" name="title" rows="1" cols="20"><%= @post2edit.title %></textarea>
+
+    <h4>  edit text </h4>
+    <textarea type="text" name="body" rows="4" cols="50" style="margin: 0px; width: 753px; height: 77px;"><%= @post2edit.body %></textarea>
+
+    <h4>  edit tags </h4>
+    <% @post2edit.tags.each do |tag|%>
+    <textarea  type="text" name="tag[<%= tag.id %>]" rows="2" cols="20" ><%= tag.tag %></textarea>
+    <% end %>
+    <input type="submit" value="EDIT">
+  </form>
+
+
+
+<p><a href="/"> HOME </a><p>
+<p><a href="/posts_settings"> BACK </a><p>

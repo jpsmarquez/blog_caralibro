@@ -1,0 +1,18 @@
+  <h1>caralibro </h1>
+  <h2>ALL POSTS RELATED TO  #<%= @tags.upcase%> </h2>
+
+<% @found_tags.each do |found_tag|  %>
+ <% @posts = found_tag.posts %>
+  <% @posts.each do |post|  %>
+  	 <h2><ul><li><%= post.title%></li></ul></h2>
+  	 <h3><ul><li><%= post.body%></li></ul></h3>
+	 <%post.tags.each do |tag|%>
+      <h5><ul><li><a href="/link_tag/<%= tag.tag %>" method="get" name="tag" >#<%=tag.tag%></a></li></ul></h5>
+     <% end %> 
+  	 <h4><ul><li><%= post.date%></li></ul></h4>
+  <% end %> 
+<% end %> 
+
+  <p><a href="/"> HOME </a><p>
+ <p><a href="/posts_settings"> POSTS </a><p>
+

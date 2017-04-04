@@ -1,0 +1,11 @@
+  <h1>caralibro </h1>
+  <h3>select a post to edit</h3>
+
+  <% @all_posts.each do |post| %>
+       <h3><ul><li><a href="/post2edit/<%=post.id%>"><%=post.title%></a></li></ul></h3>
+       <ul><li><%=post.body%></li></ul>   
+       <h6><ul><li><%=post.date%></li></ul></h6>
+  <% end %>
+
+  <p><a href="/"> HOME </a><p>
+  <p><a href="/posts_settings"> BACK </a><p>
